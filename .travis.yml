@@ -16,6 +16,6 @@ matrix:
       deploy:
         provider: script
         skip_cleanup: true
-        script: cp $TRAVIS_BUILD_DIR/.npmrc.dist $TRAVIS_BUILD_DIR/.npmrc && npm publish dist --access public --dry-run
+        script: cp .npmrc.dist .npmrc && npm publish dist --access public --dry-run
         on:
           branch: topic/deploy-changes
