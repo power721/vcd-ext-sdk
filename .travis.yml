@@ -11,3 +11,8 @@ matrix:
         - "lts/*"
       before_install:
         - cd ui/api-client/packages/sdk
+      install:
+        - yarn run build
+      deploy:
+        provider: script
+        script: cp $TRAVIS_BUILD_DIR/.npmrc.dist $TRAVIS_BUILD_DIR/.npmrc && npm publish dist --access public --dry-run
