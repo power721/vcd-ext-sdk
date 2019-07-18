@@ -11,7 +11,7 @@ matrix:
         - "lts/*"
       before_install:
         - cd ui/api-client/packages/sdk
-      install:
+      before_script:
         - yarn run build
       deploy:
         provider: script
